@@ -1,0 +1,28 @@
+.book {
+    height: 200px;
+    padding: 20px;
+    background-color: rgb(41, 36, 36);
+    color: white;
+    font-size: 2em;
+}
+
+.book h1 {
+    font-size: 1em;;
+}
+
+.book p {
+    font-size: 0.5em;
+}
+
+#book-registration {
+    display: none;
+}
+
+#book-registration.active {
+    display: block;
+}
+
+.shelf {
+    display: flex;
+    gap: 30px;
+}
