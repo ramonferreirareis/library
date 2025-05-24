@@ -23,9 +23,15 @@
         </div>
         <div>
             <label for="pages">Pages: </label>
-            <input type="text" name="pages" id="pages" required>
+            <input type="number" name="pages" id="pages" required>
         </div>
-        <button type="submit">Add</button>
+        <div>
+            <label for="read">Read</label>
+            <input type="radio" name="status" id="read" value="Read" required>
+            <label for="not-read">Not read</label>
+            <input type="radio" name="status" id="not-read" value="Not read">
+        </div>
+        <button type ="submit" class="form-button">Add</button>
     </form>
     <div class="shelf">
         

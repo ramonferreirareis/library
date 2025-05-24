@@ -20,17 +20,28 @@ function addBookToLibrary() {
 addBookToLibrary();
 
 const shelf = document.querySelector('.shelf');
-// const bookDiv = document.createElement('div');
-
-// bookDiv.classList.add('book');
-// bookDiv.textContent = myLibrary[0].title;
-
-// shelf.append(bookDiv);
-
 const form = document.querySelector('#book-registration');
+const formBtn = document.querySelector('.form-button');
 
 const addButton = document.querySelector('.addButton');
 addButton.addEventListener('click', () => form.classList.toggle('active'));
+
+// formBtn.addEventListener('click', () => {
+//     let title = document.querySelector('#title').value;
+//     console.log(title);
+// });
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    let title = document.querySelector("#title").value;
+    let author = document.querySelector("#author").value;
+    let pages = document.querySelector("#pages").value;
+    let status = document.querySelector('input[name="status"]:checked').value;
+
+    console.log(`The title is ${title} by ${author} with ${pages} pages${status}`);
+
+});
 
 
 myLibrary.forEach(({title, page, author, read, id})=> {
