@@ -10,14 +10,13 @@ function Book(title, page, author, read, id) {
     this.id = id;
 }
 
-function addBookToLibrary() {
-    const book = new Book('Re:Zero', '300', 'Tappei', 'read', self.crypto.randomUUID());
-    const book2 = new Book('Makeine', '360', 'Ame', 'not read', self.crypto.randomUUID());
+function addBookToLibrary(title, page, author, read, id) {
+    let book = new Book(title, page, author, read, id);
+    // const book = new Book('Re:Zero', '300', 'Tappei', 'read', self.crypto.randomUUID());
+    // const book2 = new Book('Makeine', '360', 'Ame', 'not read', self.crypto.randomUUID());
     myLibrary.push(book);
-    myLibrary.push(book2);
-}
 
-addBookToLibrary();
+}
 
 const shelf = document.querySelector('.shelf');
 const form = document.querySelector('#book-registration');
@@ -25,11 +24,6 @@ const formBtn = document.querySelector('.form-button');
 
 const addButton = document.querySelector('.addButton');
 addButton.addEventListener('click', () => form.classList.toggle('active'));
-
-// formBtn.addEventListener('click', () => {
-//     let title = document.querySelector('#title').value;
-//     console.log(title);
-// });
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -39,12 +33,12 @@ form.addEventListener("submit", (e) => {
     let pages = document.querySelector("#pages").value;
     let status = document.querySelector('input[name="status"]:checked').value;
 
+    addBookToLibrary(title, author, pages, status);
     console.log(`The title is ${title} by ${author} with ${pages} pages${status}`);
 
-});
 
 
-myLibrary.forEach(({title, page, author, read, id})=> {
+    myLibrary.forEach(({title, page, author, read, id})=> {
     let book = document.createElement('div');
     book.classList.add('book');
 
@@ -67,3 +61,4 @@ myLibrary.forEach(({title, page, author, read, id})=> {
     shelf.append(book);
 }
 );
+});

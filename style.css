@@ -1,8 +1,13 @@
+body {
+    background-color: rgb(32, 30, 30);
+    color: white;
+}
+
 .book {
     height: 200px;
     padding: 20px;
-    background-color: rgb(41, 36, 36);
-    color: white;
+    background-color: rgb(247, 235, 235);
+    color: rgb(19, 18, 18);
     font-size: 2em;
 }
 
