@@ -59,6 +59,8 @@ form.addEventListener("submit", (e) => {
     book.append(status);
 
     shelf.append(book);
+
+    form.reset();
 }
 );
 });
